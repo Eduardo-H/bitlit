@@ -9,6 +9,7 @@ const controlSearch = async () => {
 
     if (query) {
         searchView.clearSearchInput();
+        searchView.clearResults();
         state.search = new Search(query);
         // Rendering loader
         renderLoader(elements.content);
@@ -27,4 +28,14 @@ const controlSearch = async () => {
     }
 }
 
-document.querySelector('#search-btn').addEventListener('click', controlSearch);
+elements.searchButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    controlSearch();
+});
+
+elements.searchInput.addEventListener('keyup', (e) => {
+    e.preventDefault();
+    if (e.keyCode === 13) {
+        controlSearch();
+    }
+});
