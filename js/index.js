@@ -1,5 +1,6 @@
 import Search from './Models/Search.js';
 import * as searchView from './Views/searchView.js';
+import { elements, renderLoader, clearLoader } from './Views/base.js';
 
 const state = {};
 
@@ -9,11 +10,16 @@ const controlSearch = async () => {
     if (query) {
         searchView.clearSearchInput();
         state.search = new Search(query);
-
+        // Rendering loader
+        renderLoader(elements.content);
         try {
+            // Getting token the be able to fetch data
             await state.search.getToken();
+            // Fetching data
             await state.search.getData();
-            console.log(state.search);
+            // Deleting loader
+            clearLoader();
+            // Showing results
             searchView.renderResults(state.search);
         } catch (error) {
             console.log(error);

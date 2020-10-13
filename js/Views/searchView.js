@@ -12,7 +12,7 @@ export const clearSearchInput = () => {
 
 const renderArtist = artist => {
     const markup = `
-    <div class="col-lg-2 mb-3">
+    <div class="col-lg-2 mb-3 animate__animated animate__fadeIn">
         <div class="card-body shadow-sm wraper-card">
             <div class="artist-info d-flex flex-column mx-auto align-items-center mr-5">
                 <div class="artist-image">
@@ -31,7 +31,7 @@ const renderArtist = artist => {
 
 const renderTrack = track => {
     const markup = `
-    <div class="col-lg-2 mb-3">
+    <div class="col-lg-2 mb-3 animate__animated animate__fadeIn">
         <div class="card-body shadow-sm wraper-card">
             <div class="track-info d-flex flex-column mx-auto align-items-center mr-5">
                 <div class="track-image">
@@ -50,7 +50,7 @@ const renderTrack = track => {
 
 const renderAlbum = album => {
     const markup = `
-    <div class="col-lg-2 mb-3">
+    <div class="col-lg-2 mb-3 animate__animated animate__fadeIn">
         <div class="card-body shadow-sm wraper-card">
             <div class="album-info d-flex flex-column mx-auto align-items-center mr-5">
                 <div class="album-image shadow">

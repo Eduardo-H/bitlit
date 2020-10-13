@@ -90,3 +90,8 @@ body {
 .album-image img {
     border-radius: 5px;   
 }
+
+.loader img {
+    height: 70px;
+    width: auto;
+}
