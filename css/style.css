@@ -14,10 +14,11 @@ body {
 --------------
 */
 
-.header-title {
+.description-heading {
     font-size: 30px;
-    font-weight: 400;
+    font-weight: 300;
     color: #fff;
+    text-align: center;
 }
 
 .search-input,
@@ -36,14 +37,14 @@ body {
 
 .search-btn {
     font-size: 15px;
-    color: #3D3D3D;
-    background-color: #FFD80C;
+    color: #141414;
+    background-color: #1BD954;
     padding: 4px 20px;
     transition: 0.2s;
 }
 
 .search-btn:hover {
-    background-color: #f2ca02;
+    background-color: #21f05f;
 }
 
 /*
@@ -59,9 +60,15 @@ body {
     margin-bottom: 15px;
 }
 
-.wraper-card {
+.wrapper-card {
     background-color: rgb(21, 21, 21);
     border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.wrapper-card:hover {
+    background-color: rgb(31, 31, 31);
 }
 
 .artist-name p,
@@ -80,6 +87,7 @@ body {
 .album-image img {
     width: 120px;
     height: 120px;
+    object-fit: cover;
 }
 
 .artist-image img {
@@ -94,4 +102,130 @@ body {
 .loader img {
     height: 70px;
     width: auto;
+}
+
+/*
+--------------
+--- MODALS ---
+--------------
+*/
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(48, 48, 48, 0.2);
+}
+
+.modal-content {
+    background-color: rgb(39, 39, 39);
+    margin: 10% auto;
+    padding: 20px 30px 30px 30px;
+    width: 60%;
+    color: #fff;
+    animation-name: animatetop;
+    animation-duration: 0.45s
+}
+
+.close {
+    color: rgb(219, 219, 219);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+.close:hover,
+.close:focus {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-label {
+    font-size: 14px;
+    margin-bottom: 0;
+    color: #1BD954;
+}
+
+.spotify-btn {
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 13px 12px;
+    border-radius: 5px;
+}
+
+.spotify-btn img  {
+    height: 35px;
+}
+
+.spotify-btn p {
+    font-size: 14px;
+    color: #fff;
+    display: inline;
+    margin-bottom: 0;
+    margin-left: 8px;
+}
+
+.artist-modal-img {
+    width: 170px;
+    height: 170px;
+    border-radius: 100%;
+    object-fit: cover;
+}
+
+/*
+------------------
+--- ANIMATIONS ---
+------------------
+*/
+
+@keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
+
+/*
+---------------------
+--- MEDIA QUERIES ---
+---------------------
+*/
+
+@media (max-width: 760px) {
+    .description-heading {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 1199px) {
+    .modal-content {
+        width: 80%;
+    }
+
+    .artist-img-wrapper{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+
+    .artist-modal-img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .artist-modal-name {
+        font-size: 22px;
+        text-align: center;
+    }
+}
+
+@media (min-width: 1200px) {
+    .modal-content {
+        width: 63%;
+    }
 }

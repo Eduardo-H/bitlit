@@ -39,3 +39,37 @@ elements.searchInput.addEventListener('keyup', (e) => {
         controlSearch();
     }
 });
+
+// Modals events
+elements.content.addEventListener('click', (e) => {
+    if (e.target.matches('.wrapper-card, .wrapper-card *')) {
+        e.path.forEach(current => {
+            if (current.id) {
+                let id = current.id;
+                id = id.split('-');
+
+                switch (id[0]) {
+                    case 'artist':
+                        searchView.displayArtistModal(state.search.artists[parseInt(id[1])]);
+                        break;
+                    case 'track':
+                        searchView.displayTrackModal(state.search.tracks[parseInt(id[1])]);
+                        break;
+                    case 'album':
+                        searchView.displayAlbumModal(state.search.albums[parseInt(id[1])])
+                        break;
+                }
+            }
+        });
+    }
+});
+
+elements.closeModal.addEventListener('click', () => {
+    elements.modalArtist.style.display = 'none';
+});
+
+window.addEventListener('click', (e) => {
+    if (e.target == elements.modalArtist) {
+        elements.modalArtist.style.display = 'none';
+    }
+});

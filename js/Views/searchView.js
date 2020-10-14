@@ -17,10 +17,10 @@ const formatName = name => {
     return name;
 };
 
-const renderArtist = artist => {
+const renderArtist = (artist, id) => {
     const markup = `
     <div class="col-lg-2 mb-4 animate__animated animate__fadeIn">
-        <div class="card-body shadow-sm wraper-card">
+        <div class="card-body shadow-sm wrapper-card" id="artist-${id}">
             <div class="artist-info d-flex flex-column mx-auto align-items-center mr-5">
                 <div class="artist-image">
                     <img src="${artist.images.length > 0 ? artist.images[0].url : 'img/img-not-found.png'}" alt="${artist.name}">
@@ -36,10 +36,10 @@ const renderArtist = artist => {
     document.querySelector('.artist-row').insertAdjacentHTML('beforeend', markup);
 }
 
-const renderTrack = track => {
+const renderTrack = (track, id) => {
     const markup = `
     <div class="col-lg-2 mb-4 animate__animated animate__fadeIn">
-        <div class="card-body shadow-sm wraper-card">
+        <div class="card-body shadow-sm wrapper-card" id="track-${id}">
             <div class="track-info d-flex flex-column mx-auto align-items-center mr-5">
                 <div class="track-image">
                     <img src="${track.album.images.length > 0 ? track.album.images[0].url : 'img/img-not-found.png'}" alt="${track.name}">
@@ -55,10 +55,10 @@ const renderTrack = track => {
     document.querySelector('.track-row').insertAdjacentHTML('beforeend', markup);
 };
 
-const renderAlbum = album => {
+const renderAlbum = (album, id) => {
     const markup = `
     <div class="col-lg-2 mb-4 animate__animated animate__fadeIn">
-        <div class="card-body shadow-sm wraper-card">
+        <div class="card-body shadow-sm wrapper-card" id="album-${id}">
             <div class="album-info d-flex flex-column mx-auto align-items-center mr-5">
                 <div class="album-image shadow">
                     <img src="${album.images.length > 0 ? album.images[0].url : 'img/img-not-found.png'}" alt="${album.name}">
@@ -85,7 +85,7 @@ export const renderResults = data => {
         `;
         elements.content.insertAdjacentHTML('beforeend', artistMarkup);
 
-        data.artists.forEach(current => renderArtist(current));
+        data.artists.forEach((current, index) => renderArtist(current, index));
     }
     if (data.tracks.length > 0) {
         const trackMarkup = `
@@ -97,7 +97,7 @@ export const renderResults = data => {
         `;
         elements.content.insertAdjacentHTML('beforeend', trackMarkup);
 
-        data.tracks.forEach(current => renderTrack(current));
+        data.tracks.forEach((current, index) => renderTrack(current, index));
     }
     if (data.albums.length > 0) {
         const albumMarkup = `
@@ -109,10 +109,35 @@ export const renderResults = data => {
         `;
         elements.content.insertAdjacentHTML('beforeend', albumMarkup);
 
-        data.albums.forEach(current => renderAlbum(current));
+        data.albums.forEach((current, index) => renderAlbum(current, index));
     }
 };
 
 export const clearResults = () => {
     elements.content.innerHTML = '';
+}
+
+const formatGenres = genres => {
+    let strGenres = genres.map((current) => current[0].toUpperCase() + current.slice(1));
+    strGenres = strGenres.join();
+    strGenres = strGenres.replaceAll(',', ', ');
+    return strGenres;
+};
+
+export const displayArtistModal = artist => {
+    // Updating the modal's information with the artist's information
+    elements.artistImage.src = `${artist.images.length > 0 ? artist.images[0].url : 'img/img-not-found.png'}`
+    elements.artistName.textContent = `${artist.name}`;
+    elements.artistFollowers.textContent = `${artist.followers.total}`;
+    elements.artistGenres.textContent = `${formatGenres(artist.genres)}`;
+    elements.spotifyButton.href = `${artist.external_urls.spotify}`;
+
+    // Displayng the modal 
+    elements.modalArtist.style.display = 'block';
+}
+
+export const displayTrackModal = track => {
+}
+
+export const displayAlbumModal = album => {
 }

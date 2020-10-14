@@ -34,71 +34,49 @@
 
     <section class="pb-4">
         <div class="container content">
-            <!--
-            <div class="artists mb-3">
-                <h4 class="type-title">Artists</h4>
-                <div class="artist-row row justify-content-start">
-
-                    <div class="col-lg-2">
-                        <div class="card-body shadow-sm wraper-card">
-                            <div class="artist-info d-flex flex-column mx-auto align-items-center mr-5">
-                                <div class="artist-image">
-                                    <img src="img/BillieEilish.jpg" alt="Billie Eilish">
-                                </div>
-                                <div class="artist-name">
-                                    <p>Billie Eilish</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
+            <div class="d-flex justify-content-center">
+                <h1 class="description-heading">
+                    Welcome to BitLit, here you can find every track, artist or album that you desire.
+                </h1>
             </div>
-            
-            <div class="tracks mb-3">
-                <h4 class="type-title">Tracks</h4>
-                <div class="track-row row justify-content-start">
-
-                    <div class="col-lg-2">
-                        <div class="card-body shadow-sm wraper-card">
-                            <div class="track-info d-flex flex-column mx-auto align-items-center mr-5">
-                                <div class="track-image">
-                                    <img src="img/wwfawdwg.jpeg" alt="Bad guy">
-                                </div>
-                                <div class="track-name">
-                                    <p>Bad guy</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-            
-            <div class="albums mb-3">
-                <h4 class="type-title">Albums</h4>
-                <div class="album-row row justify-content-start">
-
-                    <div class="col-lg-2">
-                        <div class="card-body shadow-sm wraper-card">
-                            <div class="album-info d-flex flex-column mx-auto align-items-center mr-5">
-                                <div class="album-image shadow">
-                                    <img src="img/wwfawdwg.jpeg" alt="When We All Fall Asleep, Where do We Go?">
-                                </div>
-                                <div class="album-name">
-                                    <p>WWAFAWDWG</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-            -->
         </div>
     </section>
 
+    <!-- Artist Modal -->
+    <div class="modal" id="artist-modal">
+        <div class="modal-content">
+            <div class="d-lg-flex justify-content-end">
+                <span class="close">&times;</span>
+            </div>
+            <div class="d-xl-flex mt-3">
+                <div class="artist-img-wrapper">
+                    <img src="" class="artist-modal-img" alt="">
+                </div>
+
+                <div class="d-lg-flex flex-column ml-lg-4">
+                    <h2 class="artist-modal-name"></h2>
+                    <label for="artist-modal-followers" class="modal-label">Followers</label>
+                    <p class="artist-modal-followers"></p>
+                    <label for="artist-modal-genre" class="modal-label">Genres</label>
+                    <p class="artist-modal-genre"></p>
+                </div>
+
+                <div class="d-flex flex-column ml-lg-auto">
+                    <a href="#" target="_blank" class="btn spotify-btn">
+                        <img src="img/spotify.png" alt="Spotify logo">
+                        <p>See on Spotify</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script type="module" src="js/index.js"></script>
+
+    <!--
+        Ícones feitos por <a href="https://www.flaticon.com/br/autores/pixel-perfect" title="Pixel perfect">Pixel perfect</a> 
+        from <a href="https://www.flaticon.com/br/" title="Flaticon"> www.flaticon.com</a>
+    -->
 </body>
 
 </html>
