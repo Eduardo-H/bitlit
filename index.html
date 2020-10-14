@@ -62,11 +62,48 @@
                 </div>
 
                 <div class="d-flex flex-column ml-lg-auto">
-                    <a href="#" target="_blank" class="btn spotify-btn">
+                    <a href="#" target="_blank" class="btn spotify-artist">
                         <img src="img/spotify.png" alt="Spotify logo">
                         <p>See on Spotify</p>
                     </a>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Track Modal -->
+    <div class="modal" id="track-modal">
+        <div class="modal-content">
+            <div class="d-lg-flex justify-content-end">
+                <span class="close">&times;</span>
+            </div>
+
+            <div class="d-xl-flex mt-3">
+                <div class="track-img-wrapper">
+                    <img src="" class="track-modal-img" alt="">
+                </div>
+
+                <div class="d-lg-block  ml-lg-4">
+                    <h2 class="track-modal-name"></h2>
+                    <label for="track-modal-duration" class="modal-label">Duration</label>
+                    <p class="track-modal-duration"></p>
+                    <label for="track-modal-album" class="modal-label">Album</label>
+                    <p class="track-modal-album"></p>
+                    <label for="track-modal-artist" class="modal-label">Artist(s)</label>
+                    <p class="track-modal-artist"></p>
+                </div>
+
+                <div class="d-flex flex-column ml-lg-auto">
+                    <a href="#" target="_blank" class="btn spotify-track">
+                        <img src="img/spotify.png" alt="Spotify logo">
+                        <p>See on Spotify</p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="track-preview mt-3">
+                <h6 class="preview-title">Listen to preview</h6>
+                <audio class="preview-control" src="" controls></audio>
             </div>
         </div>
     </div>

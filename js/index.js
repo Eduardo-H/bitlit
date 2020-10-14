@@ -64,12 +64,21 @@ elements.content.addEventListener('click', (e) => {
     }
 });
 
-elements.closeModal.addEventListener('click', () => {
-    elements.modalArtist.style.display = 'none';
-});
+// Setting event listener for all close buttons
+for (let i = 0; i < elements.closeModal.length; i++) {
+    elements.closeModal[i].addEventListener('click', () => {
+        elements.modalArtist.style.display = 'none';
+        elements.modalTrack.style.display = 'none';
+    });
+}
 
 window.addEventListener('click', (e) => {
     if (e.target == elements.modalArtist) {
         elements.modalArtist.style.display = 'none';
+    }
+    if (e.target == elements.modalTrack) {
+        elements.modalTrack.style.display = 'none';
+        // Pausing the music when clicking outside of the modal
+        elements.previewControl.pause();
     }
 });

@@ -124,19 +124,48 @@ const formatGenres = genres => {
     return strGenres;
 };
 
+const formatArtists = artists => {
+    let strArtists = artists.map((current) => current.name[0].toUpperCase() + current.name.slice(1));
+    strArtists = strArtists.join();
+    strArtists = strArtists.replaceAll(',', ', ');
+    return strArtists;
+}
+
 export const displayArtistModal = artist => {
     // Updating the modal's information with the artist's information
-    elements.artistImage.src = `${artist.images.length > 0 ? artist.images[0].url : 'img/img-not-found.png'}`
+    elements.artistImage.src = `${artist.images.length > 0 ? artist.images[0].url : 'img/img-not-found.png'}`;
     elements.artistName.textContent = `${artist.name}`;
     elements.artistFollowers.textContent = `${artist.followers.total}`;
     elements.artistGenres.textContent = `${formatGenres(artist.genres)}`;
-    elements.spotifyButton.href = `${artist.external_urls.spotify}`;
+    elements.spotifyArtist.href = `${artist.external_urls.spotify}`;
 
     // Displayng the modal 
     elements.modalArtist.style.display = 'block';
 }
 
 export const displayTrackModal = track => {
+    // Updating the modal's information with the track's information
+    elements.trackImage.src = `${track.album.images.length > 0 ? track.album.images[0].url : 'img/img-not-found.png'}`;
+    elements.trackName.textContent = `${track.name}`;
+    elements.trackDuration.textContent = `${(track.duration_ms / 60000)}`;
+    elements.trackArtist.textContent = `${formatArtists(track.artists)}`;
+    elements.trackAlbum.textContent = `${track.album.name}`;
+    elements.spotifyTrack.href = `${track.external_urls.spotify}`;
+
+    if (track.preview_url) {
+        // In case the is a preview, display the player
+        elements.trackPreview.style.display = 'block';
+        elements.previewControl.style.display = 'block';
+        elements.previewControl.src = `${track.preview_url}`;
+    } else {
+        // In case the is not a preview, hide the player
+        elements.trackPreview.style.display = 'none';
+        elements.previewControl.style.display = 'none';
+        elements.previewControl.src = '#';
+    }
+
+    // Displayng the modal 
+    elements.modalTrack.style.display = 'block';
 }
 
 export const displayAlbumModal = album => {

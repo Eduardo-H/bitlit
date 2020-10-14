@@ -154,17 +154,20 @@ body {
     color: #1BD954;
 }
 
-.spotify-btn {
+.spotify-artist,
+.spotify-track {
     border: 1px solid rgba(255, 255, 255, 0.5);
     padding: 13px 12px;
     border-radius: 5px;
 }
 
-.spotify-btn img  {
+.spotify-artist img,
+.spotify-track img {
     height: 35px;
 }
 
-.spotify-btn p {
+.spotify-artist p,
+.spotify-track p {
     font-size: 14px;
     color: #fff;
     display: inline;
@@ -172,11 +175,23 @@ body {
     margin-left: 8px;
 }
 
-.artist-modal-img {
+.artist-modal-img,
+.track-modal-img {
     width: 170px;
     height: 170px;
-    border-radius: 100%;
     object-fit: cover;
+}
+
+.artist-modal-img {
+    border-radius: 100%;
+}
+
+.track-modal-img {
+    border-radius: 5px;
+}
+
+.preview-title {
+    margin-left: 10px;
 }
 
 /*
@@ -202,23 +217,32 @@ body {
     }
 }
 
+@media (max-width: 475px) {
+    .preview-control {
+        width: 100% !important;
+    }
+}
+
 @media (max-width: 1199px) {
     .modal-content {
         width: 80%;
     }
 
-    .artist-img-wrapper{
+    .artist-img-wrapper,
+    .track-img-wrapper{
         display: flex;
         justify-content: center;
         margin-bottom: 30px;
     }
 
-    .artist-modal-img {
-        width: 150px;
-        height: 150px;
+    .artist-modal-img,
+    .track-modal-img {
+        width: 160px;
+        height: 160px;
     }
 
-    .artist-modal-name {
+    .artist-modal-name,
+    .track-modal-name {
         font-size: 22px;
         text-align: center;
     }
