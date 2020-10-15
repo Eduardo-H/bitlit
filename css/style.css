@@ -155,19 +155,22 @@ body {
 }
 
 .spotify-artist,
-.spotify-track {
+.spotify-track,
+.spotify-album {
     border: 1px solid rgba(255, 255, 255, 0.5);
     padding: 13px 12px;
     border-radius: 5px;
 }
 
 .spotify-artist img,
-.spotify-track img {
+.spotify-track img,
+.spotify-album img {
     height: 35px;
 }
 
 .spotify-artist p,
-.spotify-track p {
+.spotify-track p,
+.spotify-album p {
     font-size: 14px;
     color: #fff;
     display: inline;
@@ -176,7 +179,8 @@ body {
 }
 
 .artist-modal-img,
-.track-modal-img {
+.track-modal-img,
+.album-modal-img {
     width: 170px;
     height: 170px;
     object-fit: cover;
@@ -186,7 +190,8 @@ body {
     border-radius: 100%;
 }
 
-.track-modal-img {
+.track-modal-img,
+.album-modal-img {
     border-radius: 5px;
 }
 
@@ -211,6 +216,40 @@ body {
 ---------------------
 */
 
+@media (min-width: 1200px) {
+    .modal-content {
+        width: 63%;
+    }
+}
+
+@media (max-width: 1199px) {
+    .modal-content {
+        width: 80%;
+    }
+
+    .artist-img-wrapper,
+    .track-img-wrapper,
+    .album-img-wrapper {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+
+    .artist-modal-img,
+    .track-modal-img,
+    .album-modal-img {
+        width: 160px;
+        height: 160px;
+    }
+
+    .artist-modal-name,
+    .track-modal-name,
+    .album-modal-name {
+        font-size: 22px;
+        text-align: center;
+    }
+}
+
 @media (max-width: 760px) {
     .description-heading {
         font-size: 18px;
@@ -223,33 +262,8 @@ body {
     }
 }
 
-@media (max-width: 1199px) {
-    .modal-content {
-        width: 80%;
-    }
-
-    .artist-img-wrapper,
-    .track-img-wrapper{
-        display: flex;
-        justify-content: center;
-        margin-bottom: 30px;
-    }
-
-    .artist-modal-img,
-    .track-modal-img {
-        width: 160px;
-        height: 160px;
-    }
-
-    .artist-modal-name,
-    .track-modal-name {
-        font-size: 22px;
-        text-align: center;
-    }
-}
-
-@media (min-width: 1200px) {
-    .modal-content {
-        width: 63%;
+@media (max-width: 350px) {
+    .logo-img {
+        width: 180px;
     }
 }

@@ -129,7 +129,21 @@ const formatArtists = artists => {
     strArtists = strArtists.join();
     strArtists = strArtists.replaceAll(',', ', ');
     return strArtists;
-}
+};
+
+const convertDuration = milliseconds => {
+    let minutes = Math.floor(milliseconds / 60000);
+    let seconds = ((milliseconds % 60000) / 1000).toFixed(0);
+    return minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
+};
+
+const convertDate = date => {
+    let newDate = date.slice(8);
+    newDate += `/${date.slice(5, 7)}`;
+    newDate += `/${date.slice(0, 4)}`;
+
+    return newDate;
+};
 
 export const displayArtistModal = artist => {
     // Updating the modal's information with the artist's information
@@ -141,13 +155,13 @@ export const displayArtistModal = artist => {
 
     // Displayng the modal 
     elements.modalArtist.style.display = 'block';
-}
+};
 
 export const displayTrackModal = track => {
     // Updating the modal's information with the track's information
     elements.trackImage.src = `${track.album.images.length > 0 ? track.album.images[0].url : 'img/img-not-found.png'}`;
     elements.trackName.textContent = `${track.name}`;
-    elements.trackDuration.textContent = `${(track.duration_ms / 60000)}`;
+    elements.trackDuration.textContent = `${convertDuration(track.duration_ms)} minutes`;
     elements.trackArtist.textContent = `${formatArtists(track.artists)}`;
     elements.trackAlbum.textContent = `${track.album.name}`;
     elements.spotifyTrack.href = `${track.external_urls.spotify}`;
@@ -166,7 +180,17 @@ export const displayTrackModal = track => {
 
     // Displayng the modal 
     elements.modalTrack.style.display = 'block';
-}
+};
 
 export const displayAlbumModal = album => {
-}
+    // Updating the modal's information with the album's information
+    elements.albumImage.src = `${album.images.length > 0 ? album.images[0].url : 'img/img-not-found.png'}`;
+    elements.albumName.textContent = `${album.name}`;
+    elements.albumTracks.textContent = `${album.total_tracks}`;
+    elements.albumRelease.textContent = `${convertDate(album.release_date)}`;
+    elements.albumArtist.textContent = `${formatArtists(album.artists)}`;
+    elements.spotifyAlbum.href = `${album.external_urls.spotify}`;
+
+    // Displayng the modal 
+    elements.modalAlbum.style.display = 'block';
+};

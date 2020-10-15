@@ -9,6 +9,7 @@ export const elements = {
     // Modal
     modalArtist: document.querySelector('#artist-modal'),
     modalTrack: document.querySelector('#track-modal'),
+    modalAlbum: document.querySelector('#album-modal'),
     modalButton: document.querySelector('#artist-0'),
     closeModal: document.getElementsByClassName('close'),
 
@@ -27,7 +28,15 @@ export const elements = {
     trackAlbum: document.querySelector('.track-modal-album'),
     spotifyTrack: document.querySelector('.spotify-track'),
     trackPreview: document.querySelector('.track-preview'),
-    previewControl: document.querySelector('.preview-control')
+    previewControl: document.querySelector('.preview-control'),
+
+    // Album modal
+    albumImage: document.querySelector('.album-modal-img'),
+    albumName: document.querySelector('.album-modal-name'),
+    albumTracks: document.querySelector('.album-modal-tracks'),
+    albumRelease: document.querySelector('.album-modal-release'),
+    albumArtist: document.querySelector('.album-modal-artist'),
+    spotifyAlbum: document.querySelector('.spotify-album')
 };
 
 export const renderLoader = parent => {
