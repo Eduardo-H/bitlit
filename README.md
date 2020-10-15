@@ -1,10 +1,10 @@
 # <div align=center> BitLit </div>
 
-<div align=center style="margin-bottom: 30px">
-    <img src="img/logo.png">
+<div align=center style="margin-bottom: 50px">
+    <img src="img/logo-dark.png">
 </div>
 
-<div align=center style="margin-bottom: 40px">
+<div align=center style="margin-bottom: 50px">
     <img src="img/display.gif">
 </div>
 
@@ -42,7 +42,7 @@ CSS3 is responsible for the styling of some of the elements present in the page.
 HTML5 is responsible for the page structuring.
 
 # How to use
-First of all you'll have to clone this repository using the command `https://github.com/Eduardo-H/bitlit.git`.</br>
+First of all you'll have to clone this repository using the command `https://github.com/Eduardo-H/bitlit.git`</br>
 This project uses the Spotify API, so you're going to need to have a Client ID and a Client Secret. You can have those accessing this link: https://developer.spotify.com/dashboard/applications.</br>
 In case it's your first time using the Spotify API, it will asked you to create an account in the site, then you'll have to create an app and there you'll have access to your Client ID and Client Secret. Once you have both of them, you're gonna need to create a file named `credentials.js` in the folder `Models`, so the final path of the file has to be `js/Models/credentials.js`. Then you can enjoy the application.
 
