@@ -46,5 +46,5 @@ First of all you'll have to clone this repository using the command `https://git
 This project uses the Spotify API, so you're going to need to have a Client ID and a Client Secret. You can have those accessing this link: https://developer.spotify.com/dashboard/applications.</br>
 In case it's your first time using the Spotify API, it will asked you to create an account in the site, then you'll have to create an app and there you'll have access to your Client ID and Client Secret. Once you have both of them, you're gonna need to create a file named `credentials.js` in the folder `Models`, so the final path of the file has to be `js/Models/credentials.js`. Then you can enjoy the application.
 
-# My expirience
+# My experience
 In this project I was able to reenforce the knowledgment gained in a web course of JavaScript, I've learned some new topics on my own during the development and I also learned how APIs works and how to use them.
