@@ -131,6 +131,10 @@ const formatArtists = artists => {
     return strArtists;
 };
 
+const numberWithCommas = num => {
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
 const convertDuration = milliseconds => {
     let minutes = Math.floor(milliseconds / 60000);
     let seconds = ((milliseconds % 60000) / 1000).toFixed(0);
@@ -149,8 +153,8 @@ export const displayArtistModal = artist => {
     // Updating the modal's information with the artist's information
     elements.artistImage.src = `${artist.images.length > 0 ? artist.images[0].url : 'img/img-not-found.png'}`;
     elements.artistName.textContent = `${artist.name}`;
-    elements.artistFollowers.textContent = `${artist.followers.total}`;
-    elements.artistGenres.textContent = `${formatGenres(artist.genres)}`;
+    elements.artistFollowers.textContent = `${numberWithCommas(artist.followers.total)}`;
+    elements.artistGenres.textContent = `${artist.genres.length > 0 ? formatGenres(artist.genres) : 'Not informed'}`;
     elements.spotifyArtist.href = `${artist.external_urls.spotify}`;
 
     // Displayng the modal 

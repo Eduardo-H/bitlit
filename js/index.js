@@ -21,7 +21,6 @@ const controlSearch = async () => {
             // Deleting loader
             clearLoader();
             // Showing results
-            console.log(state.search.albums[0]);
             searchView.renderResults(state.search);
         } catch (error) {
             console.log(error);
