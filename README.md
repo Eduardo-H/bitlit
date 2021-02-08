@@ -1,14 +1,14 @@
 # <div align=center> BitLit </div>
 
-<div align=center style="margin-bottom: 50px">
+<div align=center style="margin-bottom: 50px;">
     <img src="img/logo-dark.png">
 </div>
 
-<div align=center style="margin-bottom: 50px">
+<div align=center style="margin-bottom: 50px;">
     <img src="img/display.gif">
 </div>
 
-<div align=center style="margin-bottom: 50px">
+<div align=center style="margin-bottom: 50px;">
     <img src="img/mobile.png">
 </div>
 
